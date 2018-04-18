@@ -21,5 +21,4 @@ RUN apt-get update && \
       graphicsmagick git libjpeg-dev poppler-utils && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update
 RUN apt-get install pdftk
