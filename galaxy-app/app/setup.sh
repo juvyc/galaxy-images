@@ -25,6 +25,9 @@ pushd programs/server
 # Pass --unsafe-perm in order to still run scripts even though we run as root.
 npm install --unsafe-perm
 
+#install pdftk
+sudo apt-get install pdftk
+
 # Run custom setup.sh in programs/server if provided, as ROOT.
 if [ -x ./setup.sh ]; then
   bash ./setup.sh
