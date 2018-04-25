@@ -3,15 +3,8 @@ FROM meteor/ubuntu:20160830T182201Z_0f378f5
 # Make sure we have xz-utils so we can untar node binary, and jq to parse
 # star.json to choose the npm version.
 RUN apt-get update && \
-    apt-get install -y jq xz-utils && \
+    apt-get install -y jq xz-utils pdftk && \
     rm -rf /var/lib/apt/lists/*
-    
-#install pdftk
-RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    echo "@community http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    apk add --no-cache pdftk@community libgcj@edge
-
-ENTRYPOINT ["pdftk"]
 
 ADD ./app /app
 RUN mkdir -p /app/bundle
