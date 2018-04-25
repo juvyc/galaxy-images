@@ -7,7 +7,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
     
 #install pdftk
-RUN sudo apt-get install pdftk
+RUN apt-get install -y \
+  pdftk
 
 ADD ./app /app
 RUN mkdir -p /app/bundle
