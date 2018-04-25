@@ -5,6 +5,9 @@ FROM meteor/ubuntu:20160830T182201Z_0f378f5
 RUN apt-get update && \
     apt-get install -y jq xz-utils && \
     rm -rf /var/lib/apt/lists/*
+    
+#install pdftk
+RUN sudo apt-get install pdftk
 
 ADD ./app /app
 RUN mkdir -p /app/bundle
